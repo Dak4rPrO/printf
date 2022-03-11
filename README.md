@@ -86,9 +86,9 @@ Handle the following conversion specifier: p.
 
 Handle the following flag characters for non-custom conversion specifiers:
 
-- +
-- space
-- #
+  - +
+  - space
+  - '#'
 
 
 9. Sarcasm is lost in print
