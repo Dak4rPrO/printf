@@ -81,11 +81,6 @@ void _printf_u(unsigned int a)
                 _putchar('0');
         else
         {
-                if (n < 0)
-                {
-                        return (0);
-                }
-
                 while (f <= nat)
                         f *= 10;
                 dc = f / 10;
