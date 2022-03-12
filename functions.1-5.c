@@ -97,18 +97,26 @@ void _printf_u(unsigned int a)
 }
 
 /**
-*_printf_r - function that prints a string in reverse
-*
-*@str: string to print
+ * print_r - function that prints a string in reverse
+ * @s : ponter
+ * _putchar - si
 */
 void _printf_r(char *str)
-{
-    int i = 0;
 
-    while (*(str + i) != 0)
-    {
-        _putchar(*(str + i));
-        i--;
-    }
-    _putchar('\n');
+	int a = 0;
+	int b;
+
+	while (*s != '\0')
+	{
+		a++;
+		++s;
+	}
+	s--;
+	for (b = a; b > 0; b--)
+	{
+		_putchar(*s);
+		s--;
+	}
+
+	_putchar('\n');
 }

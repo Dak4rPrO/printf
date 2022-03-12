@@ -13,5 +13,6 @@ int _putchar(char c);
 void _printf_c(char caracter);
 void _printf_s(char *str);
 void _printf_d_i(int n);
+void _printf_r(char *str);
 
 #endif
