@@ -9,7 +9,7 @@
 
 int _printf_c(char caracter)
 {
-	if (caracter >= 36 && caracter <= 126)
+	if (caracter >= 32 && caracter <= 126)
 	{
 		_putchar(caracter);
 		_putchar('\n');
