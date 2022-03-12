@@ -33,6 +33,42 @@ void _printf_s(char *str)
 }
 
 /**
+*_printf_d_i - function that prints an integer.
+*
+*@n: number given.
+*/
+
+void _printf_d_i(int n)
+{
+        unsigned int dc, dig, nat = n;
+        double f = 1;
+
+        if (n == 0)
+                _putchar('0');
+        else
+        {
+                if (n < 0)
+                {
+                        nat = n * -1;
+                        _putchar('-');
+                }
+
+                while (f <= nat)
+                        f *= 10;
+                dc = f / 10;
+
+                while (dc >= 1)
+                {
+                        dig = nat / dc;
+                        _putchar(dig + '0');
+                        nat = (nat - (dc * dig));
+                        dc /= 10;
+                }
+        }
+        _putchar('\n');
+}
+
+/**
  * _printf_u - function that prints an unsigned integer
  * @a: number
  */

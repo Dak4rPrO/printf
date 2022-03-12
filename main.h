@@ -12,6 +12,6 @@ void _printf_u(unsigned int a);
 int _putchar(char c);
 void _printf_c(char caracter);
 void _printf_s(char *str);
-int main(void);
+void _printf_d_i(int n);
 
 #endif
