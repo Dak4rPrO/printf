@@ -72,7 +72,7 @@ void _printf_d_i(int n)
  * _printf_u - function that prints an unsigned integer
  * @a: number
  */
-void _printf_u(unsigned int a)
+void _printf_u(unsigned int n)
 {
 	unsigned int dc, dig, nat = n;
         double f = 1;
@@ -98,24 +98,24 @@ void _printf_u(unsigned int a)
 
 /**
  * print_r - function that prints a string in reverse
- * @s : ponter
+ * @str : ponter
  * _putchar - si
 */
 void _printf_r(char *str)
-
+{
 	int a = 0;
 	int b;
 
-	while (*s != '\0')
+	while (*str != '\0')
 	{
 		a++;
-		++s;
+		++str;
 	}
-	s--;
+	str--;
 	for (b = a; b > 0; b--)
 	{
-		_putchar(*s);
-		s--;
+		_putchar(*str);
+		str--;
 	}
 
 	_putchar('\n');

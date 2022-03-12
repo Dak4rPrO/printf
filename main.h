@@ -8,7 +8,7 @@
 #include <ctype.h>
 
 int _printf(const char *format, ...);
-void _printf_u(unsigned int a);
+void _printf_u(unsigned int n);
 int _putchar(char c);
 void _printf_c(char caracter);
 void _printf_s(char *str);
