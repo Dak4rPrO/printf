@@ -31,3 +31,16 @@ void _printf_s(char *str)
     }
     _putchar('\n');
 }
+
+/**
+ * _printf_u - function that prints an unsigned integer
+ * @a: number
+ */
+void _printf_u(unsigned int a)
+{
+        if (a >= 48 && a <= 57 || a < 0)
+        {
+                _putchar (a);
+                _putchar ('\n');
+        }
+}
