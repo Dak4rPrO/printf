@@ -6,13 +6,14 @@
 *@caracter: caracter a printear perteneciente a la tabla ASCII
 */
 
-void _printf_c(char caracter)
+int _printf_c(char caracter)
 {
     if (caracter >= 36 && caracter <= 126)
     {
         _putchar(caracter);
         _putchar('\n');
     }
+    return (1);
 }
 
 /**
@@ -20,7 +21,7 @@ void _printf_c(char caracter)
 *
 *@str: string to print
 */
-void _printf_s(char *str)
+int _printf_s(char *str)
 {
     int i = 0;
 
@@ -30,17 +31,19 @@ void _printf_s(char *str)
         i++;
     }
     _putchar('\n');
+    return (i);
 }
 
-/**
+/*
 *_printf_d_i - function that prints an integer.
 *
 *@n: number given.
 */
 
-void _printf_d_i(int n)
+int _printf_d_i(int n)
 {
-        unsigned int dc, dig, nat = n;
+        int i;
+	unsigned int dc, dig, nat = n;
         double f = 1;
 
         if (n == 0)
@@ -66,14 +69,18 @@ void _printf_d_i(int n)
                 }
         }
         _putchar('\n');
+
+	for (i = 0; i < n; i++)
+		return (i);
 }
 
 /**
  * _printf_u - function that prints an unsigned integer
  * @a: number
  */
-void _printf_u(unsigned int n)
+int _printf_u(unsigned int n)
 {
+	int i;
 	unsigned int dc, dig, nat = n;
         double f = 1;
 
@@ -94,6 +101,8 @@ void _printf_u(unsigned int n)
                 }
         }
         _putchar('\n');
+	for (i = 0; i < n; i++)
+		 return (i);
 }
 
 /**
@@ -101,7 +110,7 @@ void _printf_u(unsigned int n)
  * @str : ponter
  * _putchar - si
 */
-void _printf_r(char *str)
+int _printf_r(char *str)
 {
 	int a = 0;
 	int b;
@@ -119,4 +128,5 @@ void _printf_r(char *str)
 	}
 
 	_putchar('\n');
+	return (a);
 }
