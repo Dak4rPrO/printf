@@ -74,9 +74,29 @@ void _printf_d_i(int n)
  */
 void _printf_u(unsigned int a)
 {
-        if (a >= 48 && a <= 57 || a < 0)
+	unsigned int dc, dig, nat = n;
+        double f = 1;
+
+        if (n == 0)
+                _putchar('0');
+        else
         {
-                _putchar (a);
-                _putchar ('\n');
+                if (n < 0)
+                {
+                        return (0);
+                }
+
+                while (f <= nat)
+                        f *= 10;
+                dc = f / 10;
+
+                while (dc >= 1)
+                {
+                        dig = nat / dc;
+                        _putchar(dig + '0');
+                        nat = (nat - (dc * dig));
+                        dc /= 10;
+                }
         }
+        _putchar('\n');
 }
