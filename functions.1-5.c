@@ -16,8 +16,18 @@ void _printf_c(char caracter)
 }
 
 /**
+*_printf_s - function that prints a string
 *
-*
-*
+*@str: string to print
 */
+void _printf_s(char *str)
+{
+    int i = 0;
 
+    while (*(str + i) != 0)
+    {
+        _putchar(*(str + i));
+        i++;
+    }
+    _putchar('\n');
+}
