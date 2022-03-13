@@ -7,9 +7,9 @@
 *Return: 1
 */
 
-int _printf_c(va_list list)
+int _printf_c(va_list c)
 {
-	char caracter = va_arg(list, char);
+	char caracter = va_arg(c, int);
 
 	if (caracter >= 32 && caracter <= 126)
 	{
@@ -25,9 +25,9 @@ int _printf_c(va_list list)
 *@str: string to print
 *Return: i
 */
-int _printf_s(va_list list)
+int _printf_s(va_list s)
 {
-	char *str = va_arg(list, char *);
+	char *str = va_arg(s, char *);
 
 	int i = 0;
 
@@ -47,39 +47,40 @@ int _printf_s(va_list list)
 *
 *Return: i
 */
-int _printf_d_i(va_list list)
+int _printf_d_i(va_list d_i)
 {
-	int n = va_arg(list, int);
+	int n = va_arg(d_i, int);
 	int i;
 	unsigned int dc, dig, nat = n;
 	double f = 1;
 
-	if (n == 0)
-		_putchar('0');
-	else
-	{
-		if (n < 0)
-		{
-			nat = n * -1;
-			_putchar('-');
-		}
-
-		while (f <= nat)
-			f *= 10;
-		dc = f / 10;
-
-		while (dc >= 1)
-		{
-			dig = nat / dc;
-			_putchar(dig + '0');
-			nat = (nat - (dc * dig));
-			dc /= 10;
-		}
-	}
-	_putchar('\n');
-
 	for (i = 0; i < n; i++)
-		return (i);
+	{
+		if (n == 0)
+			_putchar('0');
+		else
+		{
+			if (n < 0)
+			{
+				nat = n * -1;
+				_putchar('-');
+			}
+
+			while (f <= nat)
+				f *= 10;
+			dc = f / 10;
+
+			while (dc >= 1)
+			{
+				dig = nat / dc;
+				_putchar(dig + '0');
+				nat = (nat - (dc * dig));
+				dc /= 10;
+			}
+		}
+		_putchar('\n');
+	}
+	return (i);
 }
 
 /**
@@ -87,33 +88,35 @@ int _printf_d_i(va_list list)
  * @n: number
  * Return: i
  */
-int _printf_u(va_list list)
+int _printf_u(va_list u)
 {
-	unsigned int n = va_arg(list, unsigned int);
+	unsigned int n = va_arg(u, unsigned int);
 
-	int i;
-	unsigned int dc, dig, nat = n;
+	unsigned int i, dc, dig, nat = n;
 	double f = 1;
 
-	if (n == 0)
-		_putchar('0');
-	else
-	{
-		while (f <= nat)
-			f *= 10;
-		dc = f / 10;
-
-		while (dc >= 1)
-		{
-			dig = nat / dc;
-			_putchar(dig + '0');
-			nat = (nat - (dc * dig));
-			dc /= 10;
-		}
-	}
-	_putchar('\n');
 	for (i = 0; i < n; i++)
-		return (i);
+	{
+		if (n == 0)
+			_putchar('0');
+		else
+		{
+			while (f <= nat)
+				f *= 10;
+			dc = f / 10;
+
+			while (dc >= 1)
+			{
+				dig = nat / dc;
+				_putchar(dig + '0');
+				nat = (nat - (dc * dig));
+				dc /= 10;
+			}
+		}
+		_putchar('\n');
+
+	}
+	return (i);
 }
 
 /**
@@ -121,9 +124,9 @@ int _printf_u(va_list list)
  * @str : ponter
  * Return: a
 */
-int _printf_r(va_list list)
+int _printf_r(va_list r)
 {
-	char *str = va_arg(list, char *)
+	char *str = va_arg(r, char *);
 	int a = 0;
 	int b;
 

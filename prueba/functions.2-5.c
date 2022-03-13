@@ -7,7 +7,7 @@
  * Return: retorna el valor del puntero p
  */
 
-char _printf_13(va_list list)
+char _printf_13(va_list r)
 {
 	char *p = va_arg(list, char *);
 	int i = 0;
@@ -26,4 +26,28 @@ char _printf_13(va_list list)
 		}
 	}
 	return (p);
+}
+
+/**
+*/
+int _printf_x(va_list x)
+{
+}
+
+/**
+*/
+int _printf_X(va_list X)
+{
+}
+
+/**
+*/
+int _printf_o(va_list o)
+{
+}
+
+/**
+*/
+int _printf_b(va_list b)
+{
 }

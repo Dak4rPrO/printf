@@ -1,35 +1,57 @@
-#include "variadic_functions.h"
+#include "main.h"
 
 /**
- * print_strings - function that prints strings, followed by a new line
- * @n: is the number of integers passed to the function
- * @separator: separator (,).
+ * _printf - function that produces output according to a format.
+ * @format: string given.
+ *
  */
 
-void print_strings(const char *separator, const unsigned int n, ...)
+int _printf(const char *format, ...)
 {
-	unsigned int i;
+	int i, j = 0;
+
+   op_t op[] = {
+        {"c", _printf_c},
+        {"s", _printf_s},
+        {"d", _printf_d_i},
+        {"i", _printf_d_i},
+        {"u", _printf_u},
+        {"r", _printf_r},
+     /**   {"R", _printf_13},
+        {"x", _printf_x},
+        {"X", _printf_X},
+        {"o", _printf_o},
+        {"b", _printf_b},
+        {"p", _printf_p},
+        {"h", _printf_h},
+        {"%", _printf_por},*/
+        {NULL, NULL}
+    };
 
 	va_list list;
 
-	char *str;
+	if (format == NULL)
+		return (-1);
 
-	va_start(list, n);
-
-	for (i = 0; i < n;)
+	va_start(list, format);
+	for (i = 0; format[i] != '\0';)
 	{
-		str = va_arg(num, char *);
-		if (!str)
-			printf("(nil)");
+		if (format[i] == '%')
+		{
+			while (j < 15)
+				if (op[j].func[0] == format[i + 1])
+				{
+					op[j].f(list);
+					i++;
+					break;
+				}
+		}
 		else
-			printf("%s", str);
-		i++;
-
-		if (separator != NULL && i < n)
-			printf("%s", separator);
+		{
+			_putchar(format[i]);
+			i++;
+		}
 	}
-
-	printf("\n");
-
-	va_end(num);
+	va_end(list);
+	return (i);
 }
