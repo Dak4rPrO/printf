@@ -1,11 +1,11 @@
-#include "3-calc.h"
+#include "main.h"
 
 /**
  * printf_functions - function that selects the correct function
  * @s: pointer
  * Return: always
  */
-int _printf(const char *format, ...)
+int _get_functions(va_list list)
 {
 	op_t ops[] = {
 		{"%c", _printf_c},
