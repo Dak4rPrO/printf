@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			while (j < 15)
+			while (j < 7)
 				if (op[j].func[0] == format[i + 1])
 				{
 					op[j].f(list);
