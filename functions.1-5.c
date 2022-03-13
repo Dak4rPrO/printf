@@ -7,8 +7,10 @@
 *Return: 1
 */
 
-int _printf_c(char caracter)
+int _printf_c(va_list list)
 {
+	char caracter = va_arg(list, char);
+
 	if (caracter >= 32 && caracter <= 126)
 	{
 		_putchar(caracter);
@@ -23,8 +25,10 @@ int _printf_c(char caracter)
 *@str: string to print
 *Return: i
 */
-int _printf_s(char *str)
+int _printf_s(va_list list)
 {
+	char *str = va_arg(list, char *);
+
 	int i = 0;
 
 	while (*(str + i) != 0)
@@ -43,8 +47,9 @@ int _printf_s(char *str)
 *
 *Return: i
 */
-int _printf_d_i(int n)
+int _printf_d_i(va_list list)
 {
+	int n = va_arg(list, int);
 	int i;
 	unsigned int dc, dig, nat = n;
 	double f = 1;
@@ -82,8 +87,10 @@ int _printf_d_i(int n)
  * @n: number
  * Return: i
  */
-int _printf_u(unsigned int n)
+int _printf_u(va_list list)
 {
+	unsigned int n = va_arg(list, unsigned int);
+
 	int i;
 	unsigned int dc, dig, nat = n;
 	double f = 1;
@@ -114,8 +121,9 @@ int _printf_u(unsigned int n)
  * @str : ponter
  * Return: a
 */
-int _printf_r(char *str)
+int _printf_r(va_list list)
 {
+	char *str = va_arg(list, char *)
 	int a = 0;
 	int b;
 

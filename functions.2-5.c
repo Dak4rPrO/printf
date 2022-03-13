@@ -7,8 +7,9 @@
  * Return: retorna el valor del puntero p
  */
 
-char *_printf_13(char *p)
+char _printf_13(va_list list)
 {
+	char *p = va_arg(list, char *);
 	int i = 0;
 	int j = 0;
 	char let[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
