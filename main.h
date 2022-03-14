@@ -15,17 +15,17 @@
 typedef struct op
 {
 	char *func;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } op_t;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
-void _printf_u(va_list u);
-void _printf_c(va_list c);
-void _printf_s(va_list s);
-void _printf_d_i(va_list d_i);
-void _printf_r(va_list r);
-void _printf_13(va_list R);
+int _printf_u(va_list u);
+int _printf_c(va_list c);
+int _printf_s(va_list s);
+int _printf_d_i(va_list d_i);
+int _printf_r(va_list r);
+int _printf_13(va_list R);
 int _printf_x(va_list x);
 int _printf_X(va_list X);
 int _printf_o(va_list o);

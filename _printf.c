@@ -2,8 +2,8 @@
 
 /**
  * _printf - function that produces output according to a format.
- * @format: string given.
- *
+ * @format: string give
+ 
  */
 
 int _printf(const char *format, ...)
@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
         {"i", _printf_d_i},
         {"u", _printf_u},
         {"r", _printf_r},
-     /**   {"R", _printf_13},
-        {"x", _printf_x},
+	{"R", _printf_13},
+/**	{"x", _printf_x},
         {"X", _printf_X},
         {"o", _printf_o},
         {"b", _printf_b},
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			while (j < '7')
+			while (j < '8')
 			{
 				if (format[i + 1] == op[j].func[0])
 				{

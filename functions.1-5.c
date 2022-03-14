@@ -79,10 +79,10 @@ void _printf_d_i(va_list d_i)
  * @n: number
  * Return: i
  */
-void _printf_u(va_list u)
+int _printf_u(va_list u)
 {
 	unsigned int n = va_arg(u, unsigned int);
-
+	unsigned int 
 	unsigned int dc, dig, nat = n;
 	double f = 1;
 
@@ -109,7 +109,7 @@ void _printf_u(va_list u)
  * @str : ponter
  * Return: a
 */
-void _printf_r(va_list r)
+int _printf_r(va_list r)
 {
 	char *str = va_arg(r, char *);
 	int a = 0;
@@ -126,4 +126,5 @@ void _printf_r(va_list r)
 		_putchar(*str);
 		str--;
 	}
+	return (a);
 }
