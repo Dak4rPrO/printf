@@ -38,20 +38,26 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			while (j < 7)
-				if (op[j].func[0] == format[i + 1])
+			while (j < '7')
+			{
+				if (format[i + 1] == op[j].func[0])
 				{
 					op[j].f(list);
 					i++;
+					i++;
 					break;
 				}
+				j++;			
+			}
 		}
+
 		else
 		{
 			_putchar(format[i]);
 			i++;
 		}
 	}
+
 	va_end(list);
 	return (i);
 }
