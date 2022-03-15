@@ -4,7 +4,7 @@
 
 /**
 * _printf - function that prints messages on the screen using a format
-* @format: a string (PEND)
+* @format: a string given
 * Return: returns the number of characters printed
 */
 int _printf(const char *format, ...)
