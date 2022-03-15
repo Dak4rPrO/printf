@@ -7,11 +7,11 @@
 *Return: 1
 */
 
-int _printf_c(va_list c)
+int _printf_c(va_list list)
 {
 	char caracter;
 
-	caracter = va_arg(c, int);
+	caracter = va_arg(list, int);
 	return (write(1, &caracter, 1));
 }
 
@@ -21,9 +21,9 @@ int _printf_c(va_list c)
 *@str: string to print
 *Return: i
 */
-int _printf_s(va_list s)
+int _printf_s(va_list list)
 {
-	char *str = va_arg(s, char *);
+	char *str = va_arg(list, char *);
 
 	int i = 0;
 	
@@ -44,9 +44,9 @@ int _printf_s(va_list s)
 *
 *Return: i
 */
-int _printf_d_i(va_list d_i)
+int _printf_d_i(va_list list)
 {
-	int n = va_arg(d_i, int);
+	int n = va_arg(list, int);
 	unsigned int dc, dig, nat = n;
 	double f = 1;
 	int count = 0;
@@ -84,9 +84,9 @@ int _printf_d_i(va_list d_i)
  * @n: number
  * Return: i
  */
-int _printf_u(va_list u)
+int _printf_u(va_list list)
 {
-	unsigned int n = va_arg(u, unsigned int);
+	unsigned int n = va_arg(list, unsigned int);
 	int count = 0;
 	unsigned int dc, dig, nat = n;
 	double f = 1;
@@ -121,9 +121,9 @@ int _printf_u(va_list u)
  * @str : ponter
  * Return: a
 */
-int _printf_r(va_list r)
+int _printf_r(va_list list)
 {
-	char *str = va_arg(r, char *);
+	char *str = va_arg(list, char *);
 	int a = 0;
 	int b;
 
