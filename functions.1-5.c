@@ -46,7 +46,7 @@ int _printf_s(va_list list)
 */
 int _printf_d_i(va_list list)
 {
-	int n = va_arg(list, int);
+	long int n = va_arg(list, int);
 	unsigned int dc, dig, nat = n;
 	double f = 1;
 	int count = 0;
