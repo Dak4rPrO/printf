@@ -10,7 +10,7 @@
 
 int _printf_13(va_list list)
 {
-	char *p = va_arg(R, char *);
+	char *p = va_arg(list, char *);
 
 	int i = 0;
 	int j = 0;
