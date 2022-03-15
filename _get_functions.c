@@ -12,28 +12,29 @@ int _count(va_list list)
 
 	count++;
 	count++;
-	
-	return(count);
+
+	return (count);
 }
 
 /**
- * get_functions - function
- * @format: format
+ * get_func - function
+ * @func: format
+ * Return: contador
  */
 int (*get_func(char func))(va_list list)
 {
 	int i = 0;
 
-        op_t op[] = {
-               {"c", _printf_c},
-               {"s", _printf_s},
-               {"d", _printf_d_i},
-               {"i", _printf_d_i},
-               {"u", _printf_u},
-               {"r", _printf_r},
-               {"R", _printf_13},
-               {"\0", NULL}
-        };
+	op_t op[] = {
+		{"c", _printf_c},
+		{"s", _printf_s},
+		{"d", _printf_d_i},
+		{"i", _printf_d_i},
+		{"u", _printf_u},
+		{"r", _printf_r},
+		{"R", _printf_13},
+		{"\0", NULL}
+	};
 
 	for (i = 0; *op[i].func != '\0'; i++)
 	{
@@ -44,5 +45,5 @@ int (*get_func(char func))(va_list list)
 	}
 	_putchar('%');
 	_putchar(func);
-	return(_count);
+	return (_count);
 }

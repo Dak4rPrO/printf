@@ -1,12 +1,14 @@
 #include "main.h"
 
 /**
- * rot13 - decimal a rot13
- * leet - funcion que cambia letras especificas por numeros
- * @p: puntero
+ * _printf_13 - decimal a rot13
+ * @list: va_list
+ * let-> funcion que cambia letras especificas por numeros
+ * p-> puntero
+ * Return: contador
  */
 
-int _printf_13(va_list R)
+int _printf_13(va_list list)
 {
 	char *p = va_arg(R, char *);
 

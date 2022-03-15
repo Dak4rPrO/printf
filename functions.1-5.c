@@ -2,8 +2,8 @@
 
 /**
 *_printf_c - funcion que corresponde a printf %c
-*
-*@caracter: caracter a printear perteneciente a la tabla ASCII
+*@list: va_list
+*caracter-> caracter a printear perteneciente a la tabla ASCII
 *Return: 1
 */
 
@@ -17,8 +17,8 @@ int _printf_c(va_list list)
 
 /**
 *_printf_s - function that prints a string
-*
-*@str: string to print
+*@list: va_list
+*str-> string to print
 *Return: i
 */
 int _printf_s(va_list list)
@@ -26,7 +26,7 @@ int _printf_s(va_list list)
 	char *str = va_arg(list, char *);
 
 	int i = 0;
-	
+
 	if (!str)
 		str = "(null)";
 	while (*(str + i) != 0)
@@ -40,8 +40,8 @@ int _printf_s(va_list list)
 /**
 *_printf_d_i - function that prints an integer.
 *
-*@n: number given.
-*
+*n-> number given.
+*@list: va_list
 *Return: i
 */
 int _printf_d_i(va_list list)
@@ -50,7 +50,7 @@ int _printf_d_i(va_list list)
 	unsigned int dc, dig, nat = n;
 	double f = 1;
 	int count = 0;
-	
+
 	if (!n)
 		n = '\0';
 	if (n == 0)
@@ -81,7 +81,8 @@ int _printf_d_i(va_list list)
 
 /**
  * _printf_u - function that prints an unsigned integer
- * @n: number
+ * n-> number
+ * @list: va_list
  * Return: i
  */
 int _printf_u(va_list list)
@@ -118,7 +119,8 @@ int _printf_u(va_list list)
 
 /**
  * _printf_r - function that prints a string in reverse
- * @str : ponter
+ * str-> pointer
+ * @list: va_list
  * Return: a
 */
 int _printf_r(va_list list)
