@@ -6,7 +6,7 @@
  * @p: puntero
  */
 
-void _printf_13(va_list R)
+int _printf_13(va_list R)
 {
 	char *p = va_arg(R, char *);
 
@@ -25,4 +25,5 @@ void _printf_13(va_list R)
 			}
 		}
 	}
+	return (i);
 }

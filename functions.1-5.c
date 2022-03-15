@@ -7,14 +7,17 @@
 *Return: 1
 */
 
-void _printf_c(va_list c)
+int _printf_c(va_list c)
 {
 	char caracter = va_arg(c, int);
 
+	if (!c)
+		c = '\0';
 	if (caracter >= 32 && caracter <= 126)
 	{
 		_putchar(caracter);
 	}
+	return (1);
 }
 
 /**
@@ -23,18 +26,20 @@ void _printf_c(va_list c)
 *@str: string to print
 *Return: i
 */
-void _printf_s(va_list s)
+int _printf_s(va_list s)
 {
 	char *str = va_arg(s, char *);
 
 	int i = 0;
-
+	
+	if (!str)
+		str = "(null)";
 	while (*(str + i) != 0)
 	{
 		_putchar(*(str + i));
 		i++;
 	}
-
+	return (i);
 }
 
 /**
@@ -44,12 +49,15 @@ void _printf_s(va_list s)
 *
 *Return: i
 */
-void _printf_d_i(va_list d_i)
+int _printf_d_i(va_list d_i)
 {
 	int n = va_arg(d_i, int);
 	unsigned int dc, dig, nat = n;
 	double f = 1;
-
+	int count = 0;
+	
+	if (!n)
+		n = '\0';
 	if (n == 0)
 		_putchar('0');
 	else
@@ -58,6 +66,7 @@ void _printf_d_i(va_list d_i)
 		{
 			nat = n * -1;
 			_putchar('-');
+			count++;
 		}
 
 		while (f <= nat)
@@ -67,11 +76,12 @@ void _printf_d_i(va_list d_i)
 		while (dc >= 1)
 		{
 			dig = nat / dc;
-			_putchar(dig + '0');
+			count += _putchar(dig + '0');
 			nat = (nat - (dc * dig));
 			dc /= 10;
 		}
 	}
+	return (count);
 }
 
 /**
@@ -82,12 +92,18 @@ void _printf_d_i(va_list d_i)
 int _printf_u(va_list u)
 {
 	unsigned int n = va_arg(u, unsigned int);
-	unsigned int 
+	int count = 0;
 	unsigned int dc, dig, nat = n;
 	double f = 1;
 
-		if (n == 0)
-			_putchar('0');
+	if (!n)
+		n = '\0';
+
+	if (n == 0)
+	{
+		_putchar('0');
+		count++;
+		}
 		else
 		{
 			while (f <= nat)
@@ -97,11 +113,12 @@ int _printf_u(va_list u)
 			while (dc >= 1)
 			{
 				dig = nat / dc;
-				_putchar(dig + '0');
+				count += _putchar(dig + '0');
 				nat = (nat - (dc * dig));
 				dc /= 10;
 			}
 		}
+		return (count);
 }
 
 /**
@@ -114,6 +131,9 @@ int _printf_r(va_list r)
 	char *str = va_arg(r, char *);
 	int a = 0;
 	int b;
+
+	if (!str)
+		str = "(null)";
 
 	while (*str != '\0')
 	{
