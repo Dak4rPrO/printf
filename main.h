@@ -1,5 +1,6 @@
-#ifndef BUFFER_SIZE
-#define BUFER_SIZE
+#ifndef MAIN_H
+#define MAIN_H
+
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -11,7 +12,8 @@
 /**
  * struct op - estructura que lista las funciones
  * @func: formato
- * @list: lista de funciones
+ * @f: pointer to func
+ * list-> lista de funciones
  */
 typedef struct op
 {
