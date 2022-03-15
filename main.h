@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,6 +33,5 @@ int _printf_o(va_list o);
 int _printf_b(va_list b);
 int _printf_p(va_list p);
 int _printf_h(va_list h);
-int _printf_por(va_list por);
 
 #endif

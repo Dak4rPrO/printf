@@ -9,15 +9,10 @@
 
 int _printf_c(va_list c)
 {
-	char caracter = va_arg(c, int);
+	char caracter;
 
-	if (!c)
-		c = '\0';
-	if (caracter >= 32 && caracter <= 126)
-	{
-		_putchar(caracter);
-	}
-	return (1);
+	caracter = va_arg(c, int);
+	return (write(1, &caracter, 1));
 }
 
 /**
