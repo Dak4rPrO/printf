@@ -54,7 +54,10 @@ int _printf_d_i(va_list list)
 	if (!n)
 		n = '\0';
 	if (n == 0)
+	{
 		_putchar('0');
+		return (1);
+	}
 	else
 	{
 		if (n < 0)
