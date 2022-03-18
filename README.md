@@ -1,9 +1,32 @@
-# printf
 # 0x11. C - printf
+
+This proyect was made by @Dak4rPrO and @Titania792 
 
 ## General Objetive
 
 learn how it works printf function and develop our own function printf
+
+## Files
+
+### Main.h
+
+This file contains all function prototypes and structure declarations.
+![Inside main.h](https://github.com/Titania792/a/blob/f823848390d180ad839b9b3d57b4d6c9cb7e53f3/Main.jpg)
+
+### Functions.1-5.c & Functions.2-5.c
+
+This files contains each function created to handle conversion specifiers.
+![Examples of what we have inside this files](https://github.com/Titania792/a/blob/f823848390d180ad839b9b3d57b4d6c9cb7e53f3/Functions.jpg)
+
+### _Get_Functions.c
+
+This file contains two functions, a counter and an array made with our structure called "op", in each position of the array there are 2 elements, the first one is equivalent to the conversion specifiers and the second element corresponds to the function that does the conversion.
+![Inside _get_functions](https://github.com/Titania792/a/blob/f823848390d180ad839b9b3d57b4d6c9cb7e53f3/Get%20func.jpg)
+
+### _printf.c
+
+This file contains a function that produces output according to a format. `format` is a character string. The format string is composed of zero or more directives.
+![Inside printf.c](https://github.com/Titania792/a/blob/f823848390d180ad839b9b3d57b4d6c9cb7e53f3/printf.jpg)
 
 ## Mandatory Tasks
 
