@@ -17,7 +17,7 @@ int _printf_13(va_list list)
 	char rot[] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
 
 	if (p == NULL)
-		p = "(avy)";
+		p = "(ahyy)";
 
 	while (p[i] != '\0')
 	{
