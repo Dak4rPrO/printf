@@ -1,31 +1,42 @@
 #include "main.h"
 
 /**
- * _printf_13 - decimal a rot13
+ * _printf_13 - function that prints the rot13'ed string
  * @list: va_list
- * let-> funcion que cambia letras especificas por numeros
+ * let-> abecedario ordenado, rot-> abecedario pasado a rot13
  * p-> puntero
  * Return: contador
  */
-
 int _printf_13(va_list list)
 {
 	char *p = va_arg(list, char *);
 
-	int i = 0;
-	int j = 0;
+	unsigned int i = 0, c = 0;
+	unsigned int j = 0;
 	char let[] = {"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"};
 	char rot[] = {"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm"};
 
-	for (; p[i]; i++)
+	if (p == NULL)
+		p = "(avy)";
+
+	while (p[i] != '\0')
 	{
-		for (j = 0; j < 54; j++)
+		while (let[j] != '\0')
 		{
-			if (p[i] == let[j])
+			if (let[j] == p[i])
 			{
-				p[i] = rot[j];
+				_putchar(rot[j]);
+				c++;
+				break;
 			}
+		j++;
 		}
+		if (let[j] == '\0')
+		{
+			_putchar(p[i]);
+			c++;
+		}
+	i++;
 	}
 	return (i);
 }
